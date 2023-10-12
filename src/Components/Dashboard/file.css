@@ -1,0 +1,59 @@
+.navbars {
+    position: relative;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border: 1px solid black; /* Border style, width, and color */
+    
+    padding:  35px;
+    /* Other styles */
+  }
+  .navbars div {
+    font-size: 35px;
+    margin-left: 800px;
+  }
+  footer {
+    background-color: cyan; /* Background color for the footer */
+    color: black; /* Text color */
+    padding: 1px 0; /* Padding for content inside the footer */
+    text-align: center; /* Center-align the content */
+    bottom: 0;
+    width:100%;
+    position: fixed;
+    }
+    
+    .footer-content {
+    max-width: 500px; /* Set a maximum width for the content */
+    margin: 0 auto; /* Center-align the content horizontally */
+    
+    }
+    
+    .footer-content p {
+    margin: 0; /* Remove default margin for the paragraph */
+    }
+    
+    .footer-content ul {
+    list-style-type: none; /* Remove bullet points from the list */
+    padding: 0;
+    }
+    
+    .footer-content ul li {
+    display: inline; /* Display list items inline */
+    margin-right: 20px; /* Add spacing between list items */
+    }
+    
+    .footer-content ul li:last-child {
+    margin-right: 0; /* Remove margin from the last list item */
+    }
+    
+    .footer-content a {
+    text-decoration: none; /* Remove underlines from links */
+    color: black /* Link text color */
+    }
+    
+    .footer-content a:hover {
+    text-decoration: underline; /* Add underline on hover (optional) */
+    }
