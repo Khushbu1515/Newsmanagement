@@ -12,7 +12,7 @@
     /* Other styles */
   }
   .navbars div {
-    font-size: 35px;
+    font-size: 45px;
     margin-left: 800px;
   }
   footer {
@@ -57,3 +57,51 @@
     .footer-content a:hover {
     text-decoration: underline; /* Add underline on hover (optional) */
     }
+    .gradient-custom-2 {
+      /* fallback for old browsers */
+      background: #fccb90;
+      
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+      
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+      }
+      
+      @media (min-width: 768px) {
+      .gradient-form {
+      height: 100vh !important;
+      }
+      }
+      @media (min-width: 769px) {
+      .gradient-custom-2 {
+      border-top-right-radius: .3rem;
+      border-bottom-right-radius: .3rem;
+      }
+      }
+      .gradient-form
+      {
+      
+              background-color: #fff;
+              padding: 20px;
+            
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+              text-align: center;
+      }
+      .form
+      {
+           flex:1;
+           margin-bottom: auto;
+           margin-left: 800px;
+            font-size: 25px;
+           margin-right: 400px;
+              background-color: #fff;
+              padding: 25px;
+              border-radius: 50px;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+              text-align: center;
+              width:600px;
+              height:500px;
+              flex-direction: column;
+              
+  }

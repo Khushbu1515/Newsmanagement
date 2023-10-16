@@ -1,16 +1,17 @@
 import React from "react";
 import "./file.css";
-
+import newspaper from "../assets/newspaper.png"
+import { useNavigate } from "react-router-dom";
 const Homepage = () => {
   const currentTime = new Date().toLocaleTimeString();
+  const navigate=useNavigate();
 
   return (
     <div>
       <div>
         <nav className="navbars">
-         <div>THE TIMES OF INDIA</div>
-          
-          
+        <img src={newspaper}  alt=""></img>
+          <h1 style ={{color:"darkblue", fontSize:"35px"}} onClick={()=>navigate("/login")}>Login ?</h1>
         </nav>
 
         <footer>
