@@ -15,7 +15,7 @@
     font-size: 45px;
     margin-left: 800px;
   }
-  footer {
+  .footer {
     background-color: cyan; /* Background color for the footer */
     color: black; /* Text color */
     padding: 1px 0; /* Padding for content inside the footer */
@@ -104,4 +104,11 @@
               height:500px;
               flex-direction: column;
               
+  }
+  .validation
+  {
+    color:red;
+    font-size: 15px;
+  
+    
   }

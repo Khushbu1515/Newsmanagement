@@ -3,7 +3,7 @@ import "./file.css";
 import newspaper from "../assets/newspaper.png"
 import { useNavigate } from "react-router-dom";
 const Homepage = () => {
-  const currentTime = new Date().toLocaleTimeString();
+ 
   const navigate=useNavigate();
 
   return (

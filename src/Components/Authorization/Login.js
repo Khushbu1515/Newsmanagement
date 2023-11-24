@@ -2,13 +2,9 @@ import React,{useEffect} from "react";
 import "../Dashboard/file.css";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  setformDatas,
-  setisLoggedIn,
-  setUser,
-  setInputvalue,
-  setErrors,
-} from "../redux-toolkit/Store";
+import {setisLoggedIn,setformDatas,setErrors,setInputvalue,setUser} from '../redux-toolkit/reducer';
+
+
 import { toast } from "react-toastify";
 import newspaper from "../assets/newspaper.png";
 import { useNavigate } from "react-router-dom";
@@ -27,7 +23,7 @@ const Login = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!alldata.formDatas.email || !formDatas.password) {
+    if (!formDatas.email || !formDatas.password) {
       // Set error messages htmlFor empty fields
       dispatch(
         setErrors({
@@ -218,7 +214,7 @@ const Login = () => {
                               className="form-control"
                               placeholder="Email"
                               name="EmailAddress"
-                              value={formData.email}
+                              value={formDatas.email}
                               onChange={handleChange}
                             />
                             <div className="validation">{errors.email}</div>
@@ -236,7 +232,7 @@ const Login = () => {
                                 className="form-control"
                                 placeholder="password"
                                 name="password"
-                                value={formData.password}
+                                value={formDatas.password}
                                 onChange={handleChange}
                               />
                               <div className="validation">

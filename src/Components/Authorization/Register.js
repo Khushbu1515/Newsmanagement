@@ -1,30 +1,37 @@
-import React, { useState } from "react";
+import React from "react";
+export {API} from "../utils/Api"
 import "../Dashboard/file.css";
 import axios from "axios";
+import { Register} from "../redux-toolkit/action";
 import { useDispatch, useSelector } from "react-redux";
-import { setFormData,setErrors } from "../redux-toolkit/Store";
+import {setFormData,setErrors} from "../redux-toolkit/reducer";
+
+
 import { toast } from "react-toastify";
 import newspaper from "../assets/newspaper.png";
 import { useNavigate } from "react-router-dom";
+import API from "../utils/Api";
 
 const Register = () => {
   const navigate = useNavigate();
 
-  
   const dispatch = useDispatch();
   const allData = useSelector((state) => state.myData);
-  const {errors,formData}=allData
+
+  const { errors, formData } = allData;
+
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
     dispatch(setFormData({ ...formData, [name]: value }));
   };
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     if (
       !formData.name ||
       !formData.email ||
       !formData.password ||
-      !!formData.user_type
+      !formData.user_type
     ) {
       // Set error messages htmlFor empty fields
       setErrors({
@@ -37,33 +44,10 @@ const Register = () => {
       return; // Prevent form submission
     }
 
-    axios
-      .post("http://localhost:3004/user/signup", formData)
-      .then((response) => {
-        if (response.status === 200) {
-          // You can show a success message to the user
-          toast.success("Signup successful");
-          // Reset the form data to empty values
-          dispatch(
-            setFormData({
-              name: "",
-
-              email: "",
-              password: "",
-              user_type: "",
-            })
-          );
-        } else {
-          // Handle other status codes if needed
-          toast.error("Signup failed");
-        }
-      })
-      .catch((error) => {
-        // Handle network errors or other errors
-        console.error("Error:", error);
-        alert("Signup failed");
-      });
-  };
+   
+     
+    };
+  
 
   return (
     <div>
@@ -158,11 +142,14 @@ const Register = () => {
                                   value={formData.user_type}
                                   onChange={handleChange} // Ensure the correct case for the event handler
                                 >
-                                  <option value="">-- Select --</option>{" "}
-                                  {/* Set an empty value for the default option */}
+                                  <option value="">-- Select --</option>
+
                                   <option value="admin">admin</option>
                                   <option value="sub_admin">sub admin</option>
                                 </select>
+                                <div className="validation">
+                                {errors.user_type}
+                              </div>
                               </div>
                             </div>
 
